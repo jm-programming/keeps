@@ -11,7 +11,10 @@
 	</div>
 
 	<div class="col-xs-7">
-		<a href="#" class="btn btn-primary pull-right">Nueva tarea</a>
+		<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#create">
+  Nueva Tarea
+</button>
 		<table class="table table-hover table-responsive table-striped">
 		<thead>
 			<tr>
@@ -26,11 +29,13 @@
 				<td> @{{ keep.keep }} </td>
 				<td>
 					<a href="#" v-on:click.prevent="deleteKeep(keep)" class="btn">Eliminar</a>
-					<a href="#" class="btn">Editar</a>
+					<a href="#" v-on:click.prevent="editKeep(keep)" class="btn">Editar</a>
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	@include('create')
+	@include('edit')
 	</div>
 
 	<div class="col-xs-5">
@@ -39,5 +44,6 @@
 		</div>
 	</div>
 </div>
+
 
 @endsection

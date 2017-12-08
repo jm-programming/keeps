@@ -13,19 +13,11 @@ class TaksController extends Controller
      */
     public function index()
     {
-       $task = Task::all();
+       $task = Task::orderBy('ID' , 'DESC')->get();
        return $task;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+ 
 
     /**
      * Store a newly created resource in storage.
@@ -35,20 +27,13 @@ class TaksController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $this->validate($request, [
+            'keep' => 'required',
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        Task::create($request->all());
+        return;
     }
-
     /**
      * Show the form for editing the specified resource.
      *
