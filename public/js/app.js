@@ -15144,10 +15144,12 @@ return /******/ (function(modules) { // webpackBootstrap
 new Vue({
 	el:'#crud',
 
+	//se ejecuta cuando se llama la clase
 	created: function() {
 		this.getKeeps();
 	},
 
+	//Atributos
 	data:{
 		keeps:[],
 		newKeep: '',
@@ -15155,7 +15157,7 @@ new Vue({
 		fillKeep:{ 'id': '', 'keep': ''}
 	},
 
-
+	//Metodos 
 	methods: {
 		//Obtener Tareas
 		getKeeps: function(){
@@ -15196,14 +15198,24 @@ new Vue({
 
 		//editar Tarea
 		editKeep: function(keep){
-			this.fillKeep = {'id': keep.id, 'keep': keep.keep};
+			this.fillKeep.id = keep.id;
+			this.fillKeep.keep = keep.keep;
 			$('#edit').modal('show');
 		},
 		
 
 		//actualizar tarea
-		updateKeep: function(){
-			
+		updateKeep: function(id){
+			let url = "tasks/" + id;
+
+			axios.put(url , this.fillKeep).then(response => {
+				this.getKeeps();
+				this.fillKeep = {'id': '', 'keep': ''};
+				$('#edit').modal('hide');
+				toastr.success('Editado con exito...');
+			}).catch(error => {
+				this.errors = error.response.data
+			});
 		},
 
 	}
