@@ -1,5 +1,3 @@
-
-
 <form method="POST" v-on:submit.prevent="createKeep">
   <!-- Modal -->
   <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

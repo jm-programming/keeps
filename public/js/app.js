@@ -15141,8 +15141,9 @@ return /******/ (function(modules) { // webpackBootstrap
 });
 ;
 //# sourceMappingURL=axios.map
+
 new Vue({
-	el:'#crud',
+	el:'#keep',
 
 	//se ejecuta cuando se llama la clase
 	created: function() {
@@ -15154,7 +15155,7 @@ new Vue({
 		keeps:[],
 		newKeep: '',
 		errors:[],
-		fillKeep:{ 'id': '', 'keep': ''}
+		fillKeep:{ 'id': '', 'keep': ''},
 	},
 
 	//Metodos 
@@ -15174,6 +15175,7 @@ new Vue({
 
 			axios.delete(url).then(response => {
 				this.getKeeps();
+				toastr.success('Tarea Eliminada');
 			});
 			
 		},
@@ -15222,3 +15224,32 @@ new Vue({
 	
 });
 
+
+
+
+
+new Vue({
+
+	el:'#contacts',
+
+	created: function () {
+		this.getContacts()
+	},
+
+	data: {
+		contacts: [],
+		
+	},
+
+	methods: {
+
+		getContacts: function() {
+			let url = 'contacts/';
+
+			axios.get(url).then(response => {
+				this.contacts = response.data
+			});
+		},
+
+	},
+});

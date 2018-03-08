@@ -1,5 +1,6 @@
+
 new Vue({
-	el:'#crud',
+	el:'#keep',
 
 	//se ejecuta cuando se llama la clase
 	created: function() {
@@ -11,7 +12,7 @@ new Vue({
 		keeps:[],
 		newKeep: '',
 		errors:[],
-		fillKeep:{ 'id': '', 'keep': ''}
+		fillKeep:{ 'id': '', 'keep': ''},
 	},
 
 	//Metodos 
@@ -31,6 +32,7 @@ new Vue({
 
 			axios.delete(url).then(response => {
 				this.getKeeps();
+				toastr.success('Tarea Eliminada');
 			});
 			
 		},
@@ -78,4 +80,6 @@ new Vue({
 	}
 	
 });
+
+
 

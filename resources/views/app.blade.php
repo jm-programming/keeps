@@ -12,11 +12,9 @@
 
     </head>
     <body>
-       <div id="crud" class="container">
+       <div class="container">
             @yield('content')
        </div>
-
-
        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

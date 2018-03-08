@@ -18,7 +18,8 @@ mix.scripts([
 	'resources/assets/js/toastr.js',
 	'resources/assets/js/vue.js',
 	'resources/assets/js/axios.js',
-	'resources/assets/js/app.js',
+	'resources/assets/js/keep.js',
+	'resources/assets/js/contacts.js',
 ], 'public/js/app.js');
 
 

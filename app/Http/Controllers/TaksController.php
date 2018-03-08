@@ -58,7 +58,7 @@ class TaksController extends Controller
             'keep' => 'required'
         ]);
 
-        Task::find($id)->update($request->all());
+        Task::findOrFail($id)->update($request->all());
         return;
     }
 
