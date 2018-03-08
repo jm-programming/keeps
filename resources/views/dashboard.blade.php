@@ -27,7 +27,7 @@
 			<tbody>
 				<tr v-for="keep in keeps">
 						
-					<td> <h4>@{{ keep.keep }}</h4> </td>
+					<td><h4>@{{ keep.keep }}</h4></td>
 					<td>
 						<a href="#" v-on:click.prevent="deleteKeep(keep)" class="btn btn-primary">Eliminar</a>
 						<a href="#" v-on:click.prevent="editKeep(keep)" class="btn btn-warning">Editar</a>

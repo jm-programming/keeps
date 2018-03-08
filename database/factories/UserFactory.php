@@ -20,10 +20,3 @@ $factory->define(App\Task::class, function (Faker $faker) {
 });
 
 
-$factory->define(App\Contacts::class, function (Faker $faker) {
-    return [
-        'nombre' 	=> $faker->name,
-        'telefono' 	=> 8298499,
-        'email'		=> $faker->email,
-    ];
-});
