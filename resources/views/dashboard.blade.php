@@ -35,11 +35,12 @@
 				</tr>
 			</tbody>
 		</table>
+
 		@include('create')
 		@include('edit')
 	</div>
 
-	
+
 </div>
 
 

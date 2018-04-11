@@ -15226,30 +15226,3 @@ new Vue({
 
 
 
-
-
-new Vue({
-
-	el:'#contacts',
-
-	created: function () {
-		this.getContacts()
-	},
-
-	data: {
-		contacts: [],
-		
-	},
-
-	methods: {
-
-		getContacts: function() {
-			let url = 'contacts/';
-
-			axios.get(url).then(response => {
-				this.contacts = response.data
-			});
-		},
-
-	},
-});
